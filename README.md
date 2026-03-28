@@ -5,3 +5,4 @@ O projeto contêm:
  -Uma página inicial "Quem está assistindo?"
  -Uma página "Criar Perfil"
  -Uma página "Catálogo" (com fotos placeholder)
+O foco foi em aprender HTML, CSS e partes de JavaScript, além de como utilizar a IA (GitHub Copilot) para dar ideias e corrigir código.
