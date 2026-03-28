@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #141414;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.listas{
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.listas:hover{
+    color: #ff0000;
+}
+
+.filmes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
+}
+
+.series{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+img:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#perfil-ativo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+#perfil-ativo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+#perfil-ativo img{
+    width: 50px;
+    height: 25px;
+}
+
+.listas{
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: 1px;
+    justify-content: left;
+    gap: 20px;
+}
+
+.filmes,
+.series {
+    display: block;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filmes h1,
+.series h1 {
+    margin-bottom: 12px;
+}
+
+.filmes img,
+.series img {
+    width: 160px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
+@media (max-width: 768px) {
+    .filmes,
+    .series {
+        width: 100%;
+    }
+    .filmes img,
+    .series img {
+        width: 120px;
+        height: 180px;
+    }
+}
+.filmes {
+    height: auto;
+    bottom: auto;
+}
+
+@media (max-width: 768px) {
+    .filmes,
+    .series {
+        width: 100%;
+    }
+}

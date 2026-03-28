@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore nosso catálogo de filmes e séries. Encontre seus títulos favoritos e descubra novas histórias para assistir.">
+    <link rel="stylesheet" href="catálogo.css">
+    <title>Catálogo de filmes</title>
+</head>
+<body>
+    <header>
+        <div class="perfil-ativo" aria-label="Perfil ativo">
+            <img id="perfil-ativo-img" src="index.html" alt="Foto do perfil ativo" width="50" height="50" style="display: none; border-radius: 50%; margin-right: 0.5rem;">
+            <span id="perfil-ativo-nome">Usuário não selecionado</span>
+        </div>
+        <nav>
+            <h3 class="listas">Início</h3>
+            <h3 class="listas">Filmes</h3>
+            <h3 class="listas">Séries</h3>
+            <h3 class="listas">Favoritos</h3>
+        </nav>
+    </header>
+    <main>
+    <article class="filmes">
+        <h1>Filmes</h1>
+        <img src="../assets/Background de cinema.png" alt="Fundo filmes">
+        <img src="../assets/Background de cinema.png" alt="Fundo filmes">
+        <img src="../assets/Background de cinema.png" alt="Fundo filmes">
+        </article>
+    <article class="series">
+        <h1>Séries</h1>
+        <img src="../assets/Background de cinema.png" alt="Fundo séries">  
+        <img src="../assets/Background de cinema.png" alt="Fundo séries">
+        <img src="../assets/Background de cinema.png" alt="Fundo séries">
+    </article>     
+    </main>
+
+    <button id="trocar-perfil" style="position: fixed; bottom: 20px; right: 20px; background: #ff1a1a; color: #fff; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;">Trocar perfil</button>
+
+    <script>
+        const perfilSalvo = localStorage.getItem('perfilAtivo');
+        if (perfilSalvo) {
+            try {
+                const perfilAtivo = JSON.parse(perfilSalvo);
+                const nomeEl = document.getElementById('perfil-ativo-nome');
+                const imgEl = document.getElementById('perfil-ativo-img');
+
+                if (perfilAtivo.nome && nomeEl) {
+                    nomeEl.textContent = perfilAtivo.nome;
+                }
+
+                if (perfilAtivo.imagem && imgEl) {
+                    imgEl.src = perfilAtivo.imagem;
+                    imgEl.alt = `Avatar de ${perfilAtivo.nome}`;
+                    imgEl.style.display = 'inline-block';
+                }
+            } catch (erro) {
+                console.error('Erro ao ler perfilAtivo do localStorage:', erro);
+            }
+        }
+
+        const btnTrocar = document.getElementById('trocar-perfil');
+        if (btnTrocar) {
+            btnTrocar.addEventListener('click', () => {
+                localStorage.removeItem('perfilAtivo');
+                window.location.href = '../index.html';
+            });
+        }
+    </script>
+    </body>
+</html>

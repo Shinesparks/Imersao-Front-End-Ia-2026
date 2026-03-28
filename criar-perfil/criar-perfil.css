@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #141414;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+}
+
+.animated-gradient{
+    background: linear-gradient(90deg, #000 0%, #434343 100%);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s normal infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section{
+    text-align: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.perfil-nome{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.profiles{
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    padding: 10px;
+}
+
+.profile button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.profile figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img{
+    width: 120px;
+    height: 120px;
+    border: none;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.profile figcaption{
+    margin-top: 10px;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.profile img:hover{
+    border-color: rgb(150, 10, 10);
+    border: 2px solid rgb(150, 10, 10);
+    animation: 2s hoverAnimation ease;
+}
+
+@keyframes hoverAnimation{
+    0%{
+        transform: scale(1);
+}
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.adicionar-perfil{
+    width: 30%;
+    max-width: 220px;
+    height: 36px;
+    background-color: #ff1a1a;
+    border: 2px solid maroon;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    font-size: 13px;
+    color: #fff;
+    position: relative;
+    margin: 1.25rem auto 0;
+    padding: 5px 10px;
+    text-align: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.go-back{
+    width: 30%;
+    max-width: 220px;
+    height: 36px;
+    background-color: #ff1a1a;
+    border: 2px solid maroon;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    font-size: 13px;
+    color: #fff;
+    position: relative;
+    margin: 1.25rem auto 0;
+    padding: 5px 10px;
+    text-align: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid #ff1a1a;
+    border-radius: 16px;
+    box-sizing: content-box;
+    border-width: 2px;
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 70%;
+    height: auto;
+    list-style: none;
+}
+
+.criar-perfil{
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ff1a1a;
+    border-radius: 16px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.4px);
+    -webkit-backdrop-filter: blur(1.4px);
+    list-style: none;
+}
+
+
+#nome{
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ff1a1a;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    list-style: none;
+}
+
+/* Remove os bullets/nas bolinhas do formulário de seleção de avatar */
+.criar-perfil label input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Área clicável e foco para o avatar */
+.criar-perfil label {
+    display: inline-block;
+    margin: 0.4rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 5px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.criar-perfil label:hover,
+.criar-perfil label:focus-within {
+    transform: translateY(-2px);
+    border-color: #ff1a1a;
+    box-shadow: 0 0 8px rgba(255, 26, 26, 0.25);
+}
+
+.criar-perfil label input[type='radio']:checked + img {
+    border: none;
+    border-radius: 50%;
+    transform: scale(1.06);
+    box-shadow: 0 0 10px rgba(255, 26, 26, 0.55);
+}
+
+.criar-perfil label img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+label{
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsividade para vários tipos de dispositivos */
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    nav {
+        gap: 2rem;
+    }
+
+    .profiles {
+        gap: 2rem;
+    }
+
+    .profile img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    main {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .profiles {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .adicionar-perfil {
+        width: auto;
+        font-size: 0.9rem;
+        position: relative;
+        margin: 1.5rem auto 0;
+        left: auto;
+        transform: none;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+
+    .profiles {
+        gap: 0.9rem;
+    }
+
+    .profile img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .profile figcaption {
+        font-size: 0.9rem;
+    }
+
+    .adicionar-perfil {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 650px) {
+    main {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .profiles {
+        gap: 1rem;
+    }
+
+    .profile img {
+        width: 95px;
+        height: 95px;
+    }
+}
